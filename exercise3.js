@@ -1,42 +1,75 @@
-function dataHandling() {
- 
-  var input = [
-                ["0001", "Roman Alamsyah", "Bandar Lampung", "21/05/1989", "Membaca"],
-                ["0002", "Dika Sembiring", "Medan", "10/10/1992", "Bermain Gitar"],
-                ["0003", "Winona", "Ambon", "25/12/1965", "Memasak"],
-                ["0004", "Bintang Senjaya", "Martapura", "6/4/1970", "Berkebun"]
-            ]
-    
-    for(var i = 0; i < input.length; i++) {
-      console.log('Nomor ID :' + input[i][0]);
-      console.log('Nama :' + input[i][1]);
-      console.log('TTL :' + input[i][2]+' ' + input[i][3]);
-      console.log('Hobby :' + input[i][4]);
-      console.log('');
-      
-    }
-    
-}
 
+function dataHandling2(){
+  
+  var input = ["0001", "Roman Alamsyah ", "Bandar Lampung", "21/05/1989", "Membaca"];
+  input.splice( 1, 2);
+  input.splice(1, 0, 'Roman Alamsyah Elsharawy')
+  input.splice(2, 0, 'Provinsi Bandar Lampung')
+  input.splice(4, 0, 'Pria')
+  input.splice(5, 0, 'SMA Internasional Metro')
+  input.splice(6)
+  
+  
+  var date = input[3].split("/");
+  
+  switch(date[1]){
+    case '01':
+    bulan = 'januari';
+    break;
+  
+    case '02':
+    bulan = 'februari';
+    break;
+  
+    case '03':
+    bulan = 'maret';
+    break;
+  
+    case '04':
+    bulan = 'april';
+    break;
+  
+    case '05':
+    bulan = 'mei';
+    break;
+  
+    case '06':
+    bulan = 'juni';
+    break;
+  
+    case '07':
+    bulan = 'juli';
+    break;
+  
+    case '08':
+    bulan = 'agustus';
+    break;
+  
+    case '09':
+    bulan = 'september';
+    break;
+  
+    case '10':
+    bulan = 'oktober';
+    break;
+  
+    case '11':
+    bulan = 'november';
+    break;
+  
+    case '12':
+    bulan = 'desember';
+    break;
+  }
+  
+  date.sort(function(value1, value2) { return value2 - value1 });
 
-dataHandling();
+  console.log(input);
+  console.log(bulan);
+  
+  console.log(date);
+  console.log(input[3].split('/').join('-'));
+  console.log(input[1].slice(0,15))
+}  
 
-// Nomor ID:  0001
-// Nama Lengkap:  Roman Alamsyah
-// TTL:  Bandar Lampung 21/05/1989
-// Hobi:  Membaca
-
-// Nomor ID:  0002
-// Nama Lengkap:  Dika Sembiring
-// TTL:  Medan 10/10/1992
-// Hobi:  Bermain Gitar
-
-// Nomor ID:  0003
-// Nama Lengkap:  Winona
-// TTL:  Ambon 25/12/1965
-// Hobi:  Memasak
-
-// Nomor ID:  0004
-// Nama Lengkap:  Bintang Senjaya
-// TTL:  Martapura 6/4/1970
-// Hobi:  Berkebun
+dataHandling2()
